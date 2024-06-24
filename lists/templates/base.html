@@ -1,18 +1,35 @@
-<html>
-  <head>
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
     <title>To-Do lists</title>
-  </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-  <body>
-    <h1>{% block header_text %}{% endblock %}</h1>
+<body>
+    <div class="container">
 
-    <form method="POST" action="{% block form_action %}{% endblock %}">
-      <input name="item_text" id="id_new_item" placeholder="Enter a to-do item" />
-      {% csrf_token %}
-    </form>
+        <div class="row justify-content-center p-5 bg-body-tertiary rounded-3">
+            <div class="col-lg-6 text-center">
+                <h1 class="display-1 mb-4">{% block header_text %}{% endblock %}</h1>
 
-    {% block table %}
-    {% endblock %}
-  </body>
+                <form method="POST" action="{% block form_action %}{% endblock %}">
+                    <input class="form-control form-control-lg" name="item_text" id="id_new_item" placeholder="Enter a to-do item" />
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                {% block table %}
+                {% endblock %}
+            </div>
+        </div>
+
+    </div>
+</body>
 
 </html>
