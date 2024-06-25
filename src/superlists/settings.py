@@ -134,3 +134,14 @@ else:
     DEBUG = True
     SECRET_KEY = "insecure-key-for-dev"
     ALLOWED_HOSTS = []
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {"class": "logging.StreamHandler"},
+    },
+    "loggers": {
+        "root": {"handlers": ["console"], "level": "INFO"},
+    },
+}
