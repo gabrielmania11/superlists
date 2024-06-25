@@ -3,3 +3,4 @@ venv
 __pycache__
 *.pyc
 /static
+src/db.sqlite3
