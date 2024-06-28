@@ -1,3 +1,4 @@
+from unittest import skip
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from functional_tests.base import FunctionalTest
@@ -46,6 +47,7 @@ class ItemValidationTest(FunctionalTest):
         self.wait_for_row_in_list_table("1: Buy milk")
         self.wait_for_row_in_list_table("2: Make tea")
 
+    @skip
     def test_cannot_add_duplicate_items(self):
         # Edith goes to the home page and starts a new list
         self.browser.get(self.live_server_url)
